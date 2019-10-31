@@ -1,0 +1,171 @@
+@font-face {
+  font-family: "atomic age";
+  src: url(./fonts/atomicage-regular.ttf);
+}
+@font-face {
+  font-family: "baloo";
+  src: url(./fonts/Baloo-Regular.ttf);
+}
+body {
+  background-color: lightgray;
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  text-align: center;
+  font-family: "baloo";
+  font-weight: 400;
+}
+h1 {
+  height: 10vh;
+  line-height: 3;
+  margin: 0;
+  background-color: #e8ded1;
+}
+.nav {
+  height: 5vh;
+  line-height: 2.8;
+  background-color: rgb(245, 245, 220);
+}
+.nav ul {
+  display: flex;
+  justify-content: space-around;
+  padding-left: 0;
+  margin: 0;
+}
+
+.nav ul li {
+  list-style: none;
+}
+
+.nav ul li a:hover {
+  background-color: #dfd8bc;
+}
+
+.nav ul li a {
+  background-color: rgb(187, 168, 168);
+  border-radius: 10px;
+  transition-duration: 0.3s;
+  text-decoration: none;
+  padding: 5px 15px;
+  font-family: "atomic age", "sans serif";
+  color: rgb(165, 42, 42);
+}
+
+.about {
+  display: flex;
+  justify-content: space-around;
+  text-align: center;
+  font-family: "baloo";
+  font-weight: 400;
+}
+
+.description {
+  padding: 10px 20px;
+  line-height: 1.5;
+  font-size: 1.1rem;
+  flex-basis: 30em;
+}
+.description img {
+  width: 300px;
+  margin: 20px;
+}
+
+.imgs {
+  flex-basis: 30em;
+  margin: 21px;
+  padding: 10px 20px;
+  max-width: 480px;
+  text-align: center;
+  justify-content: center;
+}
+.imgs img {
+  width: 150px;
+}
+.imgs img:last-child {
+  width: 200px;
+  margin-top: 20px;
+}
+
+.red {
+  color: red;
+}
+
+.blue {
+  color: blue;
+}
+
+.blue,
+.red {
+  text-align: center;
+}
+
+.arr {
+  background-color: white;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.btnWrap {
+  text-align: center;
+  margin: 20px 0;
+}
+.delBtn {
+  text-decoration: none;
+  color: black;
+  /*background-color: rgb(245, 245, 220);*/
+  transition-duration: 0.3s;
+  padding: 7px 13px;
+  border: 1px solid black;
+  border-radius: 10px;
+  /*box-shadow: 5px -6px 5px 0px #BEA7F9;*/
+}
+
+.delBtn:hover {
+  background-color: #f5f5dc;
+}
+input[type="text"],
+input[type="date"] {
+  border-radius: 5px;
+  width: 25%;
+  margin: 15px;
+  text-align: center;
+}
+input[type="submit"] {
+  padding: 5px 15px;
+  border-radius: 5px;
+}
+input[name="appNum"] {
+  width: 10%;
+}
+.addBtn {
+  position: relative;
+  bottom: 36px;
+  left: 125px;
+}
+
+.require::after {
+  content: "*";
+  color: rgb(255, 0, 0);
+}
+
+.dataDelete label {
+  margin-top: 15px;
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-align: center;
+  color: rgb(255, 0, 0);
+}
+
+.dataDelete label span {
+  font-size: 1rem;
+  font-weight: 400;
+}
