@@ -22,13 +22,12 @@ h4 {
   font-weight: 400;
 }
 h1 {
-  height: 10vh;
-  line-height: 3;
   margin: 0;
   background-color: #e8ded1;
+  padding: 25px 0;
 }
 .nav {
-  height: 5vh;
+  height: 45px;
   line-height: 2.8;
   background-color: rgb(245, 245, 220);
 }
@@ -72,8 +71,9 @@ h1 {
   flex-basis: 30em;
 }
 .description img {
+  display: block;
   width: 300px;
-  margin: 20px;
+  margin: 20px auto;
 }
 
 .imgs {
@@ -83,6 +83,9 @@ h1 {
   max-width: 480px;
   text-align: center;
   justify-content: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 .imgs img {
   width: 150px;
@@ -107,12 +110,6 @@ h1 {
 
 .arr {
   background-color: white;
-}
-
-form {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
 }
 .btnWrap {
   text-align: center;

@@ -72,12 +72,38 @@ $resWater = $resWaterDelta * $waterTax;
 if ($resEl && $resGas && $resWater) {
   $resAppStr = "INSERT INTO $resApp (dateID, absEl, absGas, absWater, elTax, altElTax, gasTax, waterTax) VALUES ($dateID, $resElDelta, $resGasDelta, $resWaterDelta, $elTax, $altElTax, $gasTax, $waterTax)";
   $resAppQuery = mysqli_query($link, $resAppStr);
-  echo "<p> {$resEl} </p><p> {$resGas} </p><p> {$resWater} </p>";
+  echo "<div class='about'><p class='description'> {$resEl} </p><p class='description'> {$resGas} </p><p class='description'> {$resWater} </p></div";
 }
 else {
   echo "<h3>Input your Data first</h3>";
 }
 }
+
+//SEARCH DATA BY dateID from search.php
+elseif (isset($_POST['find'])) {
+  $findDate = $_POST['find'];
+  $subFindDate = substr($findDate, 0, 4) .".". substr($findDate, 5, 2);
+  $findDataStr = "SELECT `date`, electricity, gas, water FROM $app WHERE `dateID` = $subFindDate";
+  $findAbsStr = "SELECT absEl, absGas, absWater, elTax, altElTax, gasTax, waterTax FROM $resApp WHERE dateID = $subFindDate";
+  $queryFindData = mysqli_query($link, $findDataStr) or die('find data query error ' . mysqli_error($link));
+  $queryFindAbs = mysqli_query($link, $findAbsStr) or die('find abs query error ' . mysqli_error($link));
+  $findData = mysqli_fetch_assoc($queryFindData);
+  $findAbs = mysqli_fetch_assoc($queryFindAbs);
+  echo "<div class='about'>";
+  foreach ($findData as $key => $value) {
+   echo "<div class='description'><p>$key</p><p>$value</p></div>";
+  }
+  echo "</div>";
+  echo "<div class='about'>";
+  foreach ($findAbs as $key => $value) {
+    echo "<div class='description'><p>$key</p><p>$value</p></div>";
+   }
+   echo "</div>";
+  //echo "<div class='about'><p class='description'> {$resEl} </p><p class='description'> {$resGas} </p><p class='description'> {$resWater} </p></div";
+  //var_dump($findAbs);
+
+}
+
 //UPDATE DATA BY dateID from update.php
 elseif (isset($_POST['update'])) {
   $upDateID = $_POST['update'];

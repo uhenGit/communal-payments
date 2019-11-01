@@ -28,15 +28,15 @@ require './src/header.php';?>
 <?php
 if (isset($_SESSION['appNumber']) && strlen($_SESSION['appNumber'])>0) {
     //var_dump($_SESSION);
-   echo('<div class="btnWrap"><a class="delBtn" href="about.php?del=true">Change app number</a></div>');
+   echo('<div class="btnWrap"><a class="delBtn" href="index.php?del=true">Change app number</a></div>');
 }
  else {
-   echo('<form action="about.php" method="post">
+   echo('<form action="index.php" method="post">
     <label for="appNum" class="require">Enter Your appartment number</label>
     <input type="text" name="appNum" required>
     <input type="submit" value="Send">
 </form>');
 }
-var_dump(date('d')-20);
+//var_dump(date('d')-20);
 require './src/footer.php';
 ?>
