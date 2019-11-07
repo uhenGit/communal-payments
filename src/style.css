@@ -95,6 +95,16 @@ h1 {
   margin-top: 20px;
 }
 
+.block {
+  display: block;
+}
+.flex50 {
+  flex: 50%;
+}
+
+.flexDirect {
+  flex-direction: inherit;
+}
 .red {
   color: red;
 }
@@ -143,17 +153,27 @@ input[type="submit"] {
 input[name="appNum"] {
   width: 10%;
 }
-.addBtn {
-  position: relative;
-  bottom: 36px;
-  left: 125px;
+.flex50>*{
+  display: block;  
 }
-
+.flex50>input[type="text"] {
+  width: 65%;
+  padding-left: 25px;
+}
+.relative {
+  position: relative;
+  top: 40%;
+  right: 50%;
+}
 .require::after {
   content: "*";
   color: rgb(255, 0, 0);
 }
-
+.appBtn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 .dataDelete label {
   margin-top: 15px;
   font-size: 1.5rem;

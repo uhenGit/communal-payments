@@ -19,7 +19,7 @@ require './src/header.php';?>
         </ul>
         <p>On each page You'll see an instruction, what You should do. Then the programm will do all the operations and display results on Result Page.</p>
    </div>
-    <div class="imgs">
+    <div class="imgs block">
         <img src="./img/electricity.png" alt="electric lamp">
         <img src="./img/gas.png" alt="gas">
         <img src="./img/water.png" alt="water">
@@ -31,7 +31,7 @@ if (isset($_SESSION['appNumber']) && strlen($_SESSION['appNumber'])>0) {
    echo('<div class="btnWrap"><a class="delBtn" href="index.php?del=true">Change app number</a></div>');
 }
  else {
-   echo('<form action="index.php" method="post">
+   echo('<form class="appBtn" action="index.php" method="post">
     <label for="appNum" class="require">Enter Your appartment number</label>
     <input type="text" name="appNum" required>
     <input type="submit" value="Send">

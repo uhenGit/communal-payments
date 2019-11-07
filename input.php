@@ -11,18 +11,25 @@ if (isset($_SESSION['appNumber'])) {
   <p class='description'>
     If You want to register new data for {$prevDateID}, please input it in the right side of the screen <img src='./img/input.png' alt='input'>
   </p>
-  <form class='imgs' action='result.php' method='post'>
+  <form class='imgs flexDirect' action='result.php' method='post'>
+    <div class='flex50'>
     <label class='require' for='el'>Electricity: </label>
     <input type='text' name='el' required>
     <label class='require' for='gas'>Gas: </label>
     <input type='text' name='gas' required>
     <label class='require' for='water'>Water: </label>
     <input type='text' name='water' required>
-    <hr>
-    <label for='addEl'>Add Your data: </label>
-    <input class='add' type='text' name='addEl'>
-    <input class='addBtn' type='button' value='+'><br>
-    <input type='submit' name='submit' value='Send Data'>
+    </div>
+    <div class='flex50'>
+    <label for='addHeat'>Add Heating: </label>
+    <input class='add' type='text' name='addHeat'>
+    <label for='addGar'>Add Garbage: </label>
+    <input class='add' type='text' name='addGar'>
+    <label for='addTv'>Add TV and Internet: </label>
+    <input class='add' type='text' name='addTv'>
+    
+    </div>
+    <input class='relative' type='submit' name='submit' value='Send Data'>
   </form>
 </div>";
 } else {
